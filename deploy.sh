@@ -2,6 +2,10 @@
 
 echo "Deploiement en cours..."
 
+kubectl create -f https://download.elastic.co/downloads/eck/3.3.0/crds.yaml
+if [ $? -ne 0 ]; then echo "Erreur lors du deploiement CRDs" ; exit 1 ; fi
+kubectl apply -f https://download.elastic.co/downloads/eck/3.3.0/operator.yaml
+if [ $? -ne 0 ]; then echo "Erreur lors du deploiement Operator ECK" ; exit 1 ; fi
 kubectl apply -f storage-class.yaml
 if [ $? -ne 0 ]; then echo "Erreur lors du deploiement Storage Class" ; exit 1 ; fi
 kubectl apply -f elasticsearch.yaml
