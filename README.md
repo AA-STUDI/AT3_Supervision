@@ -20,3 +20,9 @@
 `.\deploy.ps1` : déploiement automatique de tous les outils nécessaires sur le cluster via Powershell.
 
 `./deploy.sh` : déploiement automatique de tous les outils nécessaires sur le cluster via Bash.
+
+## Script de suppression
+
+`.\delete.ps1` : suppression automatique de tous les outils (Powershell.)
+
+`./delete.sh` : suppression automatique de tous les outils (Bash.)
